@@ -6,3 +6,13 @@ href:
   rails_book: "http://www.railstutorial.org/book"
   michaelhartl: "https://www.michaelhartl.com/"
   rubyonrails: "https://rubyonrails.org/"
+
+user:
+  name:
+    max_length: 20
+  email:
+    min_length: 20
+    max_length: 255
+  email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
+  password:
+    min_length: 6
