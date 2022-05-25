@@ -1,10 +1,10 @@
 <% provide :title, t("title_help") %>
-<h1><%= t(".title") %></h1>
+<h1><%= t ".title" %></h1>
 <p>
-  <%= t(".description_1") %>
-  <%= link_to(t(".rails_help_page"), Settings.href.rails_help) %>.
-  <%= t(".description_2") %>
+  <%= t ".description_1" %>
+  <%= link_to t(".rails_help_page"), Settings.href.rails_help %>.
+  <%= t ".description_2" %>
   <%= link_to Settings.href.rails_book do %>
-    <em><%= t(:web_rails) %></em><%= t(".book") %>.
+    <em><%= t "web_rails" %></em><%= t ".book" %>.
   <% end %>
 </p>
