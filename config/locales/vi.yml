@@ -1,0 +1,55 @@
+vi:
+  sub_title: "Ứng dụng mẫu hướng dẫn Ruby on Rails"
+  title_home: "Trang chủ"
+  title_help: "Trợ giúp"
+  title_contact: "Liên hệ"
+  title_signup: "Đăng ký"
+
+  layouts:
+    header:
+      home: "Trang chủ"
+      help: "Trợ giúp"
+      login: "Đăng nhập"
+    footer:
+      about: "Về chúng tôi"
+      contact: "Liên hệ"
+      news: "Tin tức"
+      the: "Những"
+      by: "bởi"
+
+  static_pages:
+    home:
+      title: "Chào mừng đến với "
+      description: "Đây là trang chủ của "
+      signup_now: "Đăng ký ngay!"
+    contact:
+      title: "Liên hệ"
+      description: "Liên hệ Ruby on Rails Tutorial về ứng dụng mẫu tại"
+      contact_page: "trang liên hệ"
+    help:
+      title: "Trợ giúp"
+      description_1: "Nhận trợ giúp về Hướng dẫn Ruby on Rails tại "
+      description_2: "Để nhận trợ giúp về ứng dụng mẫu này, hãy xem "
+      rails_help_page: "trang trợ giúp Rails Tutorial"
+      book: " sách"
+
+  users:
+    new:
+      signup: "Đăng ký"
+      btn_title: "Tạo tài khoản của tôi"
+      password_confirmation: "Xác nhận"
+    create:
+      create_successful: "Chào mừng đến với Sample App!"
+      create_failed: "Đăng ký không thành công!"
+    show:
+      error: "Người dùng không được tìm thấy."
+
+  shared:
+    error_messages:
+      the_form_contains: "Biểu mẫu chứa"
+      error: "lỗi"
+
+  full_name_app: "ứng dụng mẫu"
+  lack_name_app: "Sample App"
+  web_rails: "Hướng dẫn Ruby on Rails"
+  author: "Michael Hartl"
