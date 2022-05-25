@@ -1,0 +1,12 @@
+<footer class="footer">
+   <small>
+      <%= t(".the") %> <%= link_to(t("web_rails"), Settings.href.rails) %> <%= t(".by") %> <%= link_to(t("author"), Settings.href.michaelhartl) %>
+   </small>
+   <nav>
+      <ul>
+         <li><%= link_to(t(".about"), about_path) %></li>
+         <li><%= link_to(t(".contact"), contact_path) %></li>
+         <li><%= link_to(t(".news"), Settings.href.rails_news) %></li>
+      </ul>
+   </nav>
+</footer>
