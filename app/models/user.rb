@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = Settings.user.email_regex
+  USER_ATTRIBUTE = [:name, :email, :password, :password_confirmation].freeze
 
   before_save :downcase_email
 
@@ -17,7 +18,6 @@ class User < ApplicationRecord
   has_secure_password
 
   private
-
   def downcase_email
     email.downcase!
   end
