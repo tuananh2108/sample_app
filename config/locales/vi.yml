@@ -4,12 +4,18 @@ vi:
   title_help: "Trợ giúp"
   title_contact: "Liên hệ"
   title_signup: "Đăng ký"
+  title_login: "Đăng nhập"
 
   layouts:
     header:
       home: "Trang chủ"
       help: "Trợ giúp"
       login: "Đăng nhập"
+      users: "Người dùng"
+      account: "Tài khoản"
+      profile: "Thông tin cá nhân"
+      setting: "Thiết lập"
+      log_out: "Đăng xuất"
     footer:
       about: "Về chúng tôi"
       contact: "Liên hệ"
@@ -42,7 +48,15 @@ vi:
       create_successful: "Chào mừng đến với Sample App!"
       create_failed: "Đăng ký không thành công!"
     show:
-      error: "Người dùng không được tìm thấy."
+      error: "Không tìm thấy người dùng."
+
+  sessions:
+    new:
+      log_in: "Đăng nhập"
+      new_user?: "Người dùng mới?"
+      sign_up_now!: "Đăng ký ngay!"
+    create:
+      invalid_email_password_combination: "Mật khẩu hoặc email không đúng!"
 
   shared:
     error_messages:
