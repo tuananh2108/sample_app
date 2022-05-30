@@ -36,7 +36,6 @@
 
 # Ignore helper files
 /app/helpers/static_pages_helper.rb
-/app/helpers/users_helper.rb
 
 # Ignore test folder
 /test/*
@@ -45,3 +44,10 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 node_modules
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
