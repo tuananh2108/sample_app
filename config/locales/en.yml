@@ -4,12 +4,18 @@ en:
   title_help: "Help"
   title_contact: "Contact"
   title_signup: "Sign up"
+  title_login: "Login"
 
   layouts:
     header:
       home: "Home"
       help: "Help"
       login: "Log in"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      setting: "Settings"
+      log_out: "Log out"
     footer:
       about: "About"
       contact: "Contact"
@@ -43,6 +49,14 @@ en:
       create_failed: "Registration failed!"
     show:
       error: "User not found."
+
+  sessions:
+    new:
+      log_in: "Log in"
+      new_user?: "New user?"
+      sign_up_now!: "Sign up now!"
+    create:
+      invalid_email_password_combination: "Invalid email/password combination!"
 
   shared:
     error_messages:
