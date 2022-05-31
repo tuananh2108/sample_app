@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by id: params[:id]
-    user_not_found unless @user
+    return if @user
+
+    flash[:danger] = t ".error"
+    redirect_to root_path
   end
 
   def new
@@ -21,11 +24,6 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_not_found
-    flash[:danger] = t ".error"
-    redirect_to root_path
-  end
-
   def user_params
     params.require(:user).permit(User::USER_ATTRIBUTE)
   end
