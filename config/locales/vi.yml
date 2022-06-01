@@ -55,8 +55,10 @@ vi:
       log_in: "Đăng nhập"
       new_user?: "Người dùng mới?"
       sign_up_now!: "Đăng ký ngay!"
+      remember_me?: "Nhớ tài khoản"
     create:
       invalid_email_password_combination: "Mật khẩu hoặc email không đúng!"
+      find_email_error: "Email không hợp lệ!"
 
   shared:
     error_messages:

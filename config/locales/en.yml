@@ -55,8 +55,10 @@ en:
       log_in: "Log in"
       new_user?: "New user?"
       sign_up_now!: "Sign up now!"
+      remember_me?: "Remember me on this computer"
     create:
       invalid_email_password_combination: "Invalid email/password combination!"
+      find_email_error: "Invalid email!"
 
   shared:
     error_messages:
