@@ -15,7 +15,9 @@ class User < ApplicationRecord
             length: {maximum: Settings.user.name.max_length}
 
   validates :password, presence: true,
-            length: {minimum: Settings.user.password.min_length}, if: :password
+            length: {minimum: Settings.user.password.min_length},
+            if: :password,
+            allow_nil: true
 
   has_secure_password
 
@@ -39,14 +41,14 @@ class User < ApplicationRecord
     update remember_digest: User.digest(remember_token)
   end
 
+  def forget
+    update_attribute :remember_digest, nil
+  end
+
   def authenticated? remember_token
     return false unless remember_token
 
     BCrypt::Password.new(remember_digest).is_password? remember_token
-  end
-
-  def forget
-    update_attribute :remember_digest, nil
   end
 
   private

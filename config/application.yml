@@ -1,0 +1,7 @@
+host: "localhost:3000"
+host_email: "example@railstutorial.org"
+mail_user_name: "6a91d4da43af91"
+mail_user_password: "df5e45dd33ffe2"
+mail_address: "smtp.mailtrap.io"
+mail_domain: "smtp.mailtrap.io"
+mail_port: "2525"

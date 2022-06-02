@@ -49,6 +49,27 @@ en:
       create_failed: "Registration failed!"
     show:
       error: "User not found."
+    index:
+      title: "All users"
+      delete: "Delete"
+      confirm: "You sure?"
+    edit:
+      title_page: "Edit user"
+      title: "Update your profile"
+      btn_changes: "Save changes"
+      txt_change: "change"
+    update:
+      update_success: "Profile updated"
+      update_failed: "Profile update failed!"
+    destroy:
+      destroy_success: "User deleted"
+      destroy_failed: "Delete fail!"
+    form:
+      lab_name: "Name"
+      lab_email: "Email"
+      lab_password: "Password"
+      lab_password_confirm: "Confirm Password"
+    logged_in_user: "Please log in."
 
   sessions:
     new:
