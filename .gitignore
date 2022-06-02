@@ -29,6 +29,9 @@
 /config/master.key
 /config/database.yml
 /config/credentials.yml.enc
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
 
 # Ignore framgia
 .framgia-ci-reports/
@@ -39,11 +42,6 @@
 
 # Ignore test folder
 /test/*
-
-config/settings.local.yml
-config/settings/*.local.yml
-config/environments/*.local.yml
-node_modules
 
 /public/packs
 /public/packs-test

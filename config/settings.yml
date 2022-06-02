@@ -16,3 +16,9 @@ user:
   email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
   password:
     min_length: 6
+  helper:
+    size: 80
+  size:
+    max_length: 50
+  edit:
+    link_href: "https://gravatar.com/emails"

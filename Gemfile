@@ -6,7 +6,9 @@ ruby "3.1.2"
 gem "bcrypt", "~> 3.1", ">= 3.1.18"
 gem "bootsnap", require: false
 gem "bootstrap-sass", "~> 3.4", ">= 3.4.1"
+gem "bootstrap-will_paginate", "1.0.0"
 gem "config", "~> 4.0"
+gem "faker", "2.1.2"
 gem "importmap-rails"
 gem "jbuilder"
 gem "mysql2", "~> 0.5.4"
@@ -18,6 +20,7 @@ gem "stimulus-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 gem "webpacker"
+gem "pagy", "~> 5.10", ">= 5.10.1"
 
 group :development, :test do
   # gem "debug", platforms: %i[ mri mingw x64_mingw ]

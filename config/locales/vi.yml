@@ -49,6 +49,27 @@ vi:
       create_failed: "Đăng ký không thành công!"
     show:
       error: "Không tìm thấy người dùng."
+    index:
+      title: "Danh sách người dùng"
+      delete: "Xóa"
+      confirm: "Bạn chắc chắc muốn xóa?"
+    edit:
+      title_page: "Chỉnh sửa người dùng"
+      title: "Cập nhật hồ sơ cá nhân"
+      btn_changes: "Lưu thay đổi"
+      txt_change: "thay đổi"
+    update:
+      update_success: "Hồ sơ cá nhân đã cập nhật"
+      update_failed: "Cập nhật hồ sơ không thành công!"
+    destroy:
+      destroy_success: "Người dùng đã bị xóa"
+      destroy_failed: "Người dùng đã bị xóa!"
+    form:
+      lab_name: "Tên người dùng"
+      lab_email: "Email"
+      lab_password: "Mật khẩu"
+      lab_password_confirm: "Xác nhận mật khẩu"
+    logged_in_user: "Vui lòng hãy đăng nhập."
 
   sessions:
     new:
