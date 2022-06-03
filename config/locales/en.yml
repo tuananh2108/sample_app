@@ -45,7 +45,7 @@ en:
       btn_title: "Create my account"
       password_confirmation: "Confirmation"
     create:
-      create_successful: "Welcome to the Sample App!"
+      create_info: "Please check your email to activate your account."
       create_failed: "Registration failed!"
     show:
       error: "User not found."
@@ -80,11 +80,33 @@ en:
     create:
       invalid_email_password_combination: "Invalid email/password combination!"
       find_email_error: "Invalid email!"
+      message_warning?: "Account not activated. Check your email for the activation link."
+
+  account_activations:
+    edit:
+      activated_success: "Account activated!"
+      activated_fail: "Invalid activation link"
+  
+  user_mailer:
+    account_activation:
+      txt_hi: "Hi"
+      instruction: "Welcome to the Sample App! Click on the link below to activate your account:"
+      txt_activate: "Activate"
+    account_activation_text:
+      txt_hi: "Hi"
+      instruction: "Welcome to the Sample App! Click on the link below to activate your account:"
 
   shared:
     error_messages:
       the_form_contains: "The form contains"
       error: "errors"
+
+  mailers:
+    user:
+      subject: "Account activation"
+      greeting: "Hi"
+    application:
+      layout: "mailer"
 
   full_name_app: "sample application"
   lack_name_app: "Sample App"

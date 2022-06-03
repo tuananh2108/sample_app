@@ -1,0 +1,4 @@
+<h1><%= t "lack_name_app" %></h1>
+<p><%= t(".txt_hi") + " " + @user.name %>,</p>
+<p><% t ".instruction" %></p>
+<%= link_to t(".txt_activate"), edit_account_activation_url(id: @user.activation_token, email: @user.email) %>
