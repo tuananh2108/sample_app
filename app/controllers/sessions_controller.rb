@@ -5,9 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user&.authenticate params[:session][:password]
-      log_in @user
-      params[:session][:remember_me] == "1" ? remember(@user) : forget(@user)
-      redirect_back_or @user
+      user_activated?
     else
       flash.now[:danger] = t ".invalid_email_password_combination"
       render :new
@@ -15,7 +13,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out if logged_in?
+    log_out
     redirect_to root_url
   end
 
@@ -26,5 +24,17 @@ class SessionsController < ApplicationController
 
     flash[:danger] = t ".find_email_error"
     redirect_to root_path
+  end
+
+  def user_activated?
+    if @user.activated
+      log_in @user
+      params[:session][:remember_me] == "1" ? remember(@user) : forget(@user)
+      redirect_back_or @user
+    else
+      message = t ".message_warning?"
+      flash[:warning] = message
+      redirect_to root_url
+    end
   end
 end

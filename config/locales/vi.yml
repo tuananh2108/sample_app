@@ -80,11 +80,33 @@ vi:
     create:
       invalid_email_password_combination: "Mật khẩu hoặc email không đúng!"
       find_email_error: "Email không hợp lệ!"
+      message_warning?: "Tài khoản chưa được kích hoạt. Kiểm tra email của bạn để biết liên kết kích hoạt."
+
+  account_activations:
+    edit:
+      activated_success: "Tài khoản đã được kích hoạt!"
+      activated_fail: "Liên kết kích hoạt không hợp lệ"
+
+  user_mailer:
+    account_activation:
+      txt_hi: "Xin chào"
+      instruction: "Chào mừng bạn đến với Sample App! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+      txt_activate: "Hoạt động"
+    account_activation_text:
+      txt_hi: "Xin chào"
+      instruction: "Chào mừng bạn đến với Sample App! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
 
   shared:
     error_messages:
       the_form_contains: "Biểu mẫu chứa"
       error: "lỗi"
+
+  mailers:
+    user:
+      subject: "Account activation"
+      greeting: "Xin chào"
+    application:
+      layout: "mailer"
 
   full_name_app: "ứng dụng mẫu"
   lack_name_app: "Sample App"
