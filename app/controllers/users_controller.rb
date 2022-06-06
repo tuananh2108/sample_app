@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i(edit update)
 
   def index
-    @pagy, @users = pagy(User.all, items: 10)
+    @pagy, @users = pagy User.all, items: Setting.number_row_page
   end
 
   def show; end

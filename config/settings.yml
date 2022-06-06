@@ -22,3 +22,6 @@ user:
     max_length: 50
   edit:
     link_href: "https://gravatar.com/emails"
+
+time_expired_email: 2
+number_row_page: 10
