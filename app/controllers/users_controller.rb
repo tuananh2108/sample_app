@@ -4,10 +4,13 @@ class UsersController < ApplicationController
   before_action :correct_user, only: %i(edit update)
 
   def index
-    @pagy, @users = pagy User.all, items: Setting.number_row_page
+    @pagy, @users = pagy User.all, items: Settings.number_row_page
   end
 
-  def show; end
+  def show
+    @pagy, @microposts = pagy @user.microposts,
+                              items: Settings.number_row_page
+  end
 
   def new
     @user = User.new
@@ -39,9 +42,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user&.destroy
-      flash[:success] = t "destroy_success"
+      flash[:success] = t ".destroy_success"
     else
-      flash[:danger] = t "destroy_failed"
+      flash[:danger] = t ".destroy_failed"
     end
     redirect_to users_url
   end

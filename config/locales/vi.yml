@@ -6,6 +6,9 @@ vi:
   title_signup: "Đăng ký"
   title_login: "Đăng nhập"
 
+  application:
+    logged_in_user_error: "Vui lòng hãy đăng nhập."
+
   layouts:
     header:
       home: "Trang chủ"
@@ -26,6 +29,7 @@ vi:
   static_pages:
     home:
       title: "Chào mừng đến với "
+      title_micropost: "Bài viết"
       description: "Đây là trang chủ của "
       signup_now: "Đăng ký ngay!"
     contact:
@@ -45,9 +49,10 @@ vi:
       btn_title: "Tạo tài khoản của tôi"
       password_confirmation: "Xác nhận"
     create:
-      create_successful: "Chào mừng đến với Sample App!"
+      create_info: "Please check your email to activate your account."
       create_failed: "Đăng ký không thành công!"
     show:
+      title_micropost: "Micropost"
       error: "Không tìm thấy người dùng."
     index:
       title: "Danh sách người dùng"
@@ -106,6 +111,20 @@ vi:
     check_expiration: "Đặt lại mật khẩu đã hết hạn."
     user_not_found: "Không tìm thấy người dùng!"
 
+  microposts:
+    create:
+      flash_success: "Đã tạo micropost!"
+      flash_danger: "Không tạo được micropost!"
+    destroy:
+      flash_success: "Micropost đã bị xóa"
+      flash_danger: "Xóa không thành công"
+    micropost:
+      txt_posted: "Đã đăng"
+      txt_ago: "trước"
+      title_link_delete: "xóa"
+      confirm: "Bạn chắc chắc muốn xóa?"
+    correct_user_error: "Micropost không hợp lệ"
+
   user_mailer:
     account_activation:
       txt_hi: "Xin chào"
@@ -122,6 +141,26 @@ vi:
     error_messages:
       the_form_contains: "Biểu mẫu chứa"
       error: "lỗi"
+    micropost_form:
+      placeholder: "Soạn micropost mới..."
+      btn_submit_post: "Đăng"
+    user_info:
+      title_link: "xem hồ sơ của tôi"
+      txt_micropost: "micropost"
+
+  mailers:
+    user_mailer:
+      subject_mail: "Kích hoạt tài khoản"
+      subject_password: "Đặt lại mật khẩu"
+
+  activerecord:
+    errors:
+      models:
+        micropost:
+          attributes:
+            image:
+              wrong_format: "phải là một định dạng hình ảnh hợp lệ"
+              too_big: "Kích thước ảnh quá lớn"
 
   mailers:
     user_mailer:

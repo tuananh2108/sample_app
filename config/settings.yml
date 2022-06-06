@@ -23,5 +23,16 @@ user:
   edit:
     link_href: "https://gravatar.com/emails"
 
+micropost:
+  size: 50
+  image_path: ["image/jpeg", "image/gif", "image/png"]
+  less_than: 5
+  max_length_content: 140
+  resize_to_limit: [500, 500]
+
+shared:
+  micropost_form:
+    image_path: "image/jpeg,image/gif,image/png"
+
 time_expired_email: 2
 number_row_page: 10
