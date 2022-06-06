@@ -77,6 +77,7 @@ vi:
       new_user?: "Người dùng mới?"
       sign_up_now!: "Đăng ký ngay!"
       remember_me?: "Nhớ tài khoản"
+      forgot_password?: "Quên mật khẩu"
     create:
       invalid_email_password_combination: "Mật khẩu hoặc email không đúng!"
       find_email_error: "Email không hợp lệ!"
@@ -87,14 +88,35 @@ vi:
       activated_success: "Tài khoản đã được kích hoạt!"
       activated_fail: "Liên kết kích hoạt không hợp lệ"
 
+  password_resets:
+    new:
+      title:  "Quên mật khẩu"
+      btn_submit: "Gửi"
+    create:
+      flash_info: "Email được gửi kèm theo hướng dẫn đặt lại mật khẩu"
+      flash_danger: "Không tìm thấy địa chỉ email"
+    edit:
+      title: "Đặt lại mật khẩu"
+      password_confirmation: "Xác nhận"
+      btn_submit: "Cập nhật mật khẩu"
+    update:
+      error: "không thể để trống"
+      flash_success: "Mật khẩu đã được đặt lại."
+      flash_danger: "Đặt lại mật khẩu không thành công!"
+    check_expiration: "Đặt lại mật khẩu đã hết hạn."
+    user_not_found: "Không tìm thấy người dùng!"
+
   user_mailer:
     account_activation:
       txt_hi: "Xin chào"
       instruction: "Chào mừng bạn đến với Sample App! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
       txt_activate: "Hoạt động"
-    account_activation_text:
-      txt_hi: "Xin chào"
-      instruction: "Chào mừng bạn đến với Sample App! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+    password_reset:
+      title: "Đặt lại mật khẩu"
+      title_link: "Đặt lại mật khẩu"
+      service_html_first: "Để đặt lại mật khẩu của bạn, hãy nhấp vào liên kết bên dưới:"
+      service_html_last: "Liên kết này sẽ hết hạn sau hai giờ."
+      content: "Nếu bạn không yêu cầu đặt lại mật khẩu của mình, vui lòng bỏ qua email này và mật khẩu của bạn sẽ vẫn như cũ."
 
   shared:
     error_messages:
@@ -102,11 +124,9 @@ vi:
       error: "lỗi"
 
   mailers:
-    user:
-      subject: "Account activation"
-      greeting: "Xin chào"
-    application:
-      layout: "mailer"
+    user_mailer:
+      subject_mail: "Kích hoạt tài khoản"
+      subject_password: "Đặt lại mật khẩu"
 
   full_name_app: "ứng dụng mẫu"
   lack_name_app: "Sample App"

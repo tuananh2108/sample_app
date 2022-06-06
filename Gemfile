@@ -13,6 +13,7 @@ gem "figaro", "~> 1.2"
 gem "importmap-rails"
 gem "jbuilder"
 gem "mysql2", "~> 0.5.4"
+gem "pagy", "~> 5.10", ">= 5.10.1"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.3"
 gem "rails-i18n"
@@ -21,7 +22,6 @@ gem "stimulus-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 gem "webpacker"
-gem "pagy", "~> 5.10", ">= 5.10.1"
 
 group :development, :test do
   # gem "debug", platforms: %i[ mri mingw x64_mingw ]
