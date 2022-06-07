@@ -1,0 +1,3 @@
+<%= form_for(followed_show(current_user, @user), html: {method: :delete}, remote: true) do |f| %>
+  <%= f.submit t(".btn_unfollow"), class: "btn" %>
+<% end %>

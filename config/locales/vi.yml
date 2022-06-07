@@ -74,6 +74,17 @@ vi:
       lab_email: "Email"
       lab_password: "Mật khẩu"
       lab_password_confirm: "Xác nhận mật khẩu"
+    following:
+      title: "Đang theo dõi"
+    followers:
+      title: "Người theo dõi"
+    show_follow:
+      title_link: "xem hồ sơ của tôi"
+      microposts: "Microposts:"
+    follow:
+      btn_follow: "Theo dõi"
+    unfollow:
+      btn_unfollow: "Bỏ theo dõi"
     logged_in_user: "Vui lòng hãy đăng nhập."
 
   sessions:
@@ -147,6 +158,9 @@ vi:
     user_info:
       title_link: "xem hồ sơ của tôi"
       txt_micropost: "micropost"
+    stats:
+      title_link_following: "đang theo dõi"
+      title_link_follower: "người theo dõi"
 
   mailers:
     user_mailer:
@@ -161,11 +175,6 @@ vi:
             image:
               wrong_format: "phải là một định dạng hình ảnh hợp lệ"
               too_big: "Kích thước ảnh quá lớn"
-
-  mailers:
-    user_mailer:
-      subject_mail: "Kích hoạt tài khoản"
-      subject_password: "Đặt lại mật khẩu"
 
   full_name_app: "ứng dụng mẫu"
   lack_name_app: "Sample App"
