@@ -6,6 +6,9 @@ en:
   title_signup: "Sign up"
   title_login: "Login"
 
+  application:
+    logged_in_user_error: "Please log in."
+
   layouts:
     header:
       home: "Home"
@@ -26,6 +29,7 @@ en:
   static_pages:
     home:
       title: "Welcome to the "
+      title_micropost: "Micropost Feed"
       description: "This is the home page for the "
       signup_now: "Sign up now!"
     contact:
@@ -48,6 +52,7 @@ en:
       create_info: "Please check your email to activate your account."
       create_failed: "Registration failed!"
     show:
+      title_micropost: "Microposts"
       error: "User not found."
     index:
       title: "All users"
@@ -106,6 +111,20 @@ en:
     check_expiration: "Password reset has expired."
     user_not_found: "User not found!"
 
+  microposts:
+    create:
+      flash_success: "Micropost created!"
+      flash_danger: "Micropost create failed!"
+    destroy:
+      flash_success: "Micropost deleted"
+      flash_danger: "Deleted fail"
+    micropost:
+      txt_posted: "Posted"
+      txt_ago: "ago"
+      title_link_delete: "delete"
+      confirm: "You sure?"
+    correct_user_error: "Micropost invalid"
+
   user_mailer:
     account_activation:
       txt_hi: "Hi"
@@ -122,6 +141,26 @@ en:
     error_messages:
       the_form_contains: "The form contains"
       error: "errors"
+    micropost_form:
+      placeholder: "Compose new micropost..."
+      btn_submit_post: "Post"
+    user_info:
+      title_link: "view my profile"
+      txt_micropost: "micropost"
+
+  mailers:
+    user_mailer:
+      subject_mail: "Account activation"
+      subject_password: "Password reset"
+
+  activerecord:
+    errors:
+      models:
+        micropost:
+          attributes:
+            image:
+              wrong_format: "must be a valid image format"
+              too_big: "Img size is too big"
 
   mailers:
     user_mailer:
