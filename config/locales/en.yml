@@ -74,6 +74,17 @@ en:
       lab_email: "Email"
       lab_password: "Password"
       lab_password_confirm: "Confirm Password"
+    following:
+      title: "Following"
+    followers:
+      title: "Followers"
+    show_follow:
+      title_link: "view my profile"
+      microposts: "Microposts:"
+    follow:
+      btn_follow: "Follow"
+    unfollow:
+      btn_unfollow: "Unfollow"
     logged_in_user: "Please log in."
 
   sessions:
@@ -147,6 +158,9 @@ en:
     user_info:
       title_link: "view my profile"
       txt_micropost: "micropost"
+    stats:
+      title_link_following: "following"
+      title_link_follower: "followers"
 
   mailers:
     user_mailer:
@@ -161,11 +175,6 @@ en:
             image:
               wrong_format: "must be a valid image format"
               too_big: "Img size is too big"
-
-  mailers:
-    user_mailer:
-      subject_mail: "Account activation"
-      subject_password: "Password reset"
 
   full_name_app: "sample application"
   lack_name_app: "Sample App"

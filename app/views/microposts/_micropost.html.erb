@@ -6,9 +6,9 @@
     <%= image_tag micropost.display_image if micropost.image.attached? %>
   </span>
   <span class="timestamp">
-    <%= "#{t(".txt_posted")} time_ago_in_words micropost.created_at #{t(".txt_ago")}" %>.
+    <%= "#{t(".txt_posted")} #{time_ago_in_words micropost.created_at} #{t(".txt_ago")}" %>.
     <% if current_user? micropost.user %>
-      <%= button_to t(".delete"), micropost, method: :delete, data: {confirm: t(".you_sure")} %>
+      <%= button_to t(".title_link_delete"), micropost, method: :delete, data: {confirm: t(".confirm")} %>
     <% end %>
   </span>
 </li>

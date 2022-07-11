@@ -22,6 +22,7 @@ user:
     max_length: 50
   edit:
     link_href: "https://gravatar.com/emails"
+  size_gravatar_follow: 30
 
 micropost:
   size: 50
