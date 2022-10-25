@@ -1,5 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "color.scss";
 
 /* mixins, variables, etc. */
@@ -30,7 +28,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-
 /* typography */
 h1,h2,h3,h4,h5,h6 {
   line-height: 1;
@@ -57,8 +54,22 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
+header {
+  form {
+    display: flex;
+    margin: 8px 20px 0;
+
+    input[type="search"] {
+      margin: 0 5px 0;
+    }
+
+    input[type="submit"] {
+      width: 10rem;
+    }
+  }
+}
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -74,7 +85,6 @@ p {
   color: $white-color;
   text-decoration: none;
 }
-
 
 /* footer */
 footer {
@@ -119,6 +129,41 @@ footer ul li {
 aside {
   section.user_info {
     margin-top: 20px;
+  }
+
+  section.micropost_form {
+    span.image {
+      input[type="file"]:focus {
+        border: 0;
+        outline: none;
+      }
+
+      input[type="file"]::-webkit-file-upload-button {
+        visibility: hidden;
+      }
+
+      input[type="file"]::before {
+        content: "Add Image";
+        cursor: pointer;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        outline: none;
+        white-space: nowrap;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+    }
+
+    #file-upload-content {
+      display: none;
+      margin: 10px auto 20px;
+      text-align: center;
+
+      #file-upload-image {
+        width: 100%;
+      }
+    }
   }
 
   section {
@@ -168,6 +213,46 @@ span.picture {
   margin-top: 15px;
 }
 
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $light-gray-b;
+    color: $gray-color;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue-color;
+    }
+  }
+
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
 /* forms */
 input, textarea, select, .uneditable-input {
   border: 1px solid $light-gray-b;
@@ -189,9 +274,9 @@ input {
 }
 
 .field_with_errors {
-  @extend .has-error;
+  // @extend .has-error;
   .form-control {
-    color: $state-danger-text;
+    color: $red-color;
   }
 }
 
@@ -210,13 +295,14 @@ input {
 }
 
 /* Users index */
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+table.users {
+  a {
+    color: $light-gray-3;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $light-gray-5;
   }
 }
 
@@ -225,6 +311,8 @@ input {
   padding: 0;
 
   li {
+    display: inline-block;
+    width: -webkit-fill-available;
     padding: 10px 0;
     border-top: 1px solid $gray-e8e8e8;
   }
@@ -251,8 +339,80 @@ input {
   }
 
   .timestamp {
-    color: $gray-light;
+    color: $light-gray-5;
     display: block;
     margin-left: 60px;
+  }
+}
+
+// Comment Micropost
+.comment {
+  list-style: none;
+  padding: 0;
+
+  .comment-form {
+    display: flex;
+
+    form {
+      width: 100%;
+      padding-bottom: 10px;
+
+      .field {
+        width: 100%;
+      }
+    }
+  }
+
+  ul.comment_list {
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0;
+
+    .gravatar {
+      width: 60px;
+    }
+    
+    li {
+      padding-top: 10px;
+      border-top: 1px solid $gray-e8e8e8;
+
+      div {
+        display: inline-block;
+
+        p {
+          padding-top: 5px;
+        }
+      }
+    }
+
+    ul.list-reply-cmt {
+      list-style: none;
+      margin-top: 10px;
+
+      li {
+        display: inline-block;
+        width: -webkit-fill-available;
+        padding-bottom: 10px;
+      }
+
+      li.comment-form {
+        display: inline-flex;
+      }
+    }
+  }
+}
+
+// Group
+.groups {
+  list-style: none;
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  li:not(:last-child) {
+    border-bottom: 1px solid $gray-e8e8e8;
   }
 }

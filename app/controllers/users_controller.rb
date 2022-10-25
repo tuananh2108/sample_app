@@ -2,14 +2,21 @@ class UsersController < ApplicationController
   before_action :find_user, except: %i(index new create)
   before_action :logged_in_user, except: %i(new create)
   before_action :correct_user, only: %i(edit update)
+  before_action :user_not_authorized, only: %i(index)
 
   def index
-    @pagy, @users = pagy User.all, items: Settings.number_row_page
+    @q = User.ransack(params[:q])
+    @pagy, @users = pagy @q.result, items: Settings.number_row_page
   end
 
   def show
-    @pagy, @microposts = pagy @user.microposts,
-                              items: Settings.number_row_page
+    @microposts_policy = MicropostPolicy::Scope.new(@user, Micropost).resolve(current_user)
+    return unless @microposts_policy.present?
+
+    @q = @microposts_policy.ransack(params[:q])
+    @pagy, @microposts = pagy @q.result,
+                              items: Settings.number_row_page,
+                              policy_class: MicropostPolicy
   end
 
   def new
@@ -49,6 +56,20 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def following
+    @title = t ".title"
+    @q = @user.following.ransack(params[:q])
+    @pagy, @users = pagy @q.result, items: Settings.number_row_page
+    render :show_follow
+  end
+
+  def followers
+    @title = t ".title"
+    @q = @user.followers.ransack(params[:q])
+    @pagy, @users = pagy @q.result, items: Settings.number_row_page
+    render :show_follow
+  end
+
   private
   def user_params
     params.require(:user).permit(User::USER_ATTRIBUTE)
@@ -69,5 +90,11 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find_by id: params[:id]
     redirect_to root_path unless @user
+  end
+
+  def user_not_authorized
+    return unless !current_user.admin?
+
+    redirect_to request.referrer || root_path
   end
 end

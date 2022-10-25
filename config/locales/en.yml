@@ -15,6 +15,7 @@ en:
       help: "Help"
       login: "Log in"
       users: "Users"
+      groups: "Groups"
       account: "Account"
       profile: "Profile"
       setting: "Settings"
@@ -74,6 +75,17 @@ en:
       lab_email: "Email"
       lab_password: "Password"
       lab_password_confirm: "Confirm Password"
+    following:
+      title: "Following"
+    followers:
+      title: "Followers"
+    show_follow:
+      title_link: "view my profile"
+      microposts: "Microposts:"
+    follow:
+      btn_follow: "Follow"
+    unfollow:
+      btn_unfollow: "Unfollow"
     logged_in_user: "Please log in."
 
   sessions:
@@ -112,6 +124,13 @@ en:
     user_not_found: "User not found!"
 
   microposts:
+    show:
+      title: "Micropost"
+      txt_posted: "Posted"
+      txt_ago: "ago"
+      txt_by: "by"
+      txt_cmt: "Comment"
+      input_placeholder: "Enter comment..."
     create:
       flash_success: "Micropost created!"
       flash_danger: "Micropost create failed!"
@@ -124,6 +143,39 @@ en:
       title_link_delete: "delete"
       confirm: "You sure?"
     correct_user_error: "Micropost invalid"
+
+  comments:
+    comment:
+      btn_reply: "Reply"
+      btn_delete: "Delete"
+    destroy:
+      flash_susscess: "Comment deleted!"
+      flash_danger: "Deleted comment fail!"
+
+  groups:
+    index:
+      title: "Groups"
+      title_create_group: "Create Group"
+      title_all_group: "All Groups"
+      input_placeholder: "Enter group name..."
+      btn_create: "Create"
+    create:
+      flash_success: "Created group successfully!"
+      flash_danger: "Failed to create!"
+    destroy:
+      flash_success: "Deleted group successfully!"
+      flash_danger: "Failed to delete!"
+    group:
+      btn_join: "Join"
+      btn_delete: "Delete"
+      confirm: "You sure?"
+    find_by_group_name:
+      flash_danger: "Group name already exists!"
+
+  group_users:
+    create:
+      flash_success: "Join successfullly!"
+      flash_danger: "Join failed!"
 
   user_mailer:
     account_activation:
@@ -147,6 +199,9 @@ en:
     user_info:
       title_link: "view my profile"
       txt_micropost: "micropost"
+    stats:
+      title_link_following: "following"
+      title_link_follower: "followers"
 
   mailers:
     user_mailer:
@@ -161,11 +216,6 @@ en:
             image:
               wrong_format: "must be a valid image format"
               too_big: "Img size is too big"
-
-  mailers:
-    user_mailer:
-      subject_mail: "Account activation"
-      subject_password: "Password reset"
 
   full_name_app: "sample application"
   lack_name_app: "Sample App"

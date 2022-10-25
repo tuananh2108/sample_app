@@ -3,7 +3,8 @@ class StaticPagesController < ApplicationController
     return unless logged_in?
 
     @micropost = current_user.microposts.build
-    @pagy, @feed_items = pagy current_user.feed,
+    @q = current_user.microposts.ransack(params[:q])
+    @pagy, @feed_items = pagy @q.result,
                               items: Settings.number_row_page
   end
 

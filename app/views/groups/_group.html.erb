@@ -1,0 +1,14 @@
+<li>
+  <%= link_to group.name, group %>
+  <% if !group.check_group_user?.present? %>
+    <%= form_for @group_user do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :group_id, value: group.id %>
+      <%= f.submit t(".btn_join"), class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+  <% if group.is_group_created?.present? %>
+    <%= button_to t(".btn_delete"), group, method: :delete, data: {confirm: t(".confirm")} %>
+  <% end %>
+</li>

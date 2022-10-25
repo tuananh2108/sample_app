@@ -2,6 +2,17 @@ class MicropostsController < ApplicationController
   before_action :logged_in_user, only: %i(create destroy)
   before_action :correct_user, only: :destroy
 
+  def index
+    redirect_to request.referer(q: params[:q])
+  end
+
+  def show
+    @micropost = Micropost.find_by id: params[:id]
+    @comment = Comment.new
+    @pagy, @comments = pagy @micropost.comments.not_parent.decorate,
+                            items: Settings.number_row_page
+  end
+
   def create
     @micropost = current_user.microposts.build micropost_params
     if @micropost.save

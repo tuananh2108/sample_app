@@ -1,0 +1,24 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-4">
+    <h1><%= t ".title_create_group" %></h1>
+    <%= form_for @group do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_area :name, placeholder: t(".input_placeholder") %>
+      </div>
+      <%= f.submit t(".btn_create"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <h1><%= t ".title_all_group" %></h1>
+    <% if @groups.any? %>
+      <ul class="groups">
+        <%= render @groups %>
+      </ul>
+
+      <%== pagy_bootstrap_nav(@pagy) %>
+    <% end %>
+  </div>
+</div>

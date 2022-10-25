@@ -1,5 +1,6 @@
 class Micropost < ApplicationRecord
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   has_one_attached :image
   delegate :name, to: :user
@@ -14,6 +15,7 @@ class Micropost < ApplicationRecord
                    message: :too_big}
 
   scope :recent_posts, ->{order created_at: :desc}
+  scope :by_user_ids, ->(user_id){where user_id:}
 
   def display_image
     image.variant resize_to_limit: Settings.micropost.resize_to_limit

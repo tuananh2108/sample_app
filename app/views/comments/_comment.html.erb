@@ -1,0 +1,25 @@
+<li>
+  <%= link_to gravatar_for(comment.user, size: Settings.size_gravatar), comment.user %>
+  <div>
+    <span><%= comment.user.name %></span>
+    <p id=<%= "#{comment.id}" %>><%= comment.content %></p>
+    <button class="btn-reply-cmt"><%= t ".btn_reply" %></button>
+    <% if current_user == comment.user %>
+      <%= button_to t(".btn_delete"), {:controller => "comments", :action => "destroy", :id => comment.id}, params: {:micropost_id => @micropost.id} , :method => :delete  %>
+    <% end %>
+  </div>
+  <ul class="list-reply-cmt">
+    <% comment.check_have_parent.each do |reply_comment| %>
+      <li>
+        <%= link_to gravatar_for(reply_comment.user, size: Settings.size_gravatar), reply_comment.user %>
+        <div>
+          <span><%= reply_comment.user.name %></span>
+          <p><%= reply_comment.content %></p>
+          <% if current_user == reply_comment.user %>
+            <%= button_to t(".btn_delete"), {:controller => "comments", :action => "destroy", :id => reply_comment.id}, params: {:micropost_id => @micropost.id} , :method => :delete  %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</li>

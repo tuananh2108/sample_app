@@ -1,0 +1,35 @@
+<% if policy(@micropost).show? %>
+  <% provide :title, "#{t(".title")} #{@micropost.id}" %>
+  <div class="row">
+    <h1><%= "#{t(".title")} #{@micropost.id}" %></h1>
+    <p><%= @micropost.content %></p>
+    <%= image_tag @micropost.image if @micropost.image.attached? %>
+    <p><%= "#{t(".txt_posted")} #{time_ago_in_words @micropost.created_at} #{t(".txt_ago")}. #{t(".txt_by")} #{@micropost.user.name}" %></p>
+  </div>
+  <div class="row">
+    <h3><%= t ".txt_cmt" %></h3>
+    <ul class="comment">
+      <li class="comment-form">
+          <%= link_to gravatar_for(current_user, size: Settings.size_gravatar), current_user %>
+          <%= form_for @comment do |f| %>
+            <span class="user"><%= link_to current_user.name, current_user %></span>
+            <div class="field">
+              <%= f.text_area :content, placeholder: t(".input_placeholder") %>
+            </div>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :micropost_id, value: @micropost.id %>
+            <%= f.hidden_field :parent_id %>
+            <%= f.submit t(".txt_cmt"), class: "btn btn-primary" %>
+          <% end %>
+      </li>
+      <li>
+        <% if @comments.any? %>
+          <ul class="comment_list">
+            <%= render @comments %>
+          </ul>
+          <%== pagy_bootstrap_nav(@pagy) %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+<% end %>

@@ -1,15 +1,16 @@
-<% provide :title, @user.name %>
+<% provide :title, @user && @user.name || @microposts.user.name %>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
+      <%= gravatar_for @user || @microposts.user %>
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+        <%= @user && @user.name || @microposts.user.name %>
       </h1>
+      <!--  <span>Group name</span> -->
     </section>
   </aside>
   <div class="col-md-8">
-    <% if @microposts.any? %>
+    <% if @microposts.present? %>
       <h3><%= "#{t(".title_micropost")} (#{@microposts.count})" %></h3>
       <ol class="microposts">
         <%= render @microposts %>

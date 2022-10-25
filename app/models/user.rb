@@ -1,9 +1,14 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
-  attr_accessor :remember_token, :activation_token, :reset_token
-
-  before_save :downcase_email
-  before_create :create_activation_digest
+  has_many :active_relationships, class_name: Relationship.name,
+            foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+            foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
+  has_many :group_users, dependent: :destroy
+  has_many :groups, through: :group_users
+  has_many :comments, dependent: :destroy
 
   VALID_EMAIL_REGEX = Settings.user.email_regex
   USER_ATTRIBUTE = [:name, :email, :password, :password_confirmation].freeze
@@ -22,6 +27,11 @@ class User < ApplicationRecord
             allow_nil: true
 
   has_secure_password
+
+  before_save :downcase_email
+  before_create :create_activation_digest
+
+  attr_accessor :remember_token, :activation_token, :reset_token
 
   class << self
     def digest string
@@ -77,7 +87,19 @@ class User < ApplicationRecord
   end
 
   def feed
-    microposts
+    Micropost.by_user_ids following_ids << id
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
   end
 
   private

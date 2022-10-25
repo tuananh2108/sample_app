@@ -3,10 +3,25 @@
     <%= link_to t("lack_name_app"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li>
+            <%= search_form_for @q do |f| %>
+              <% if path_link == root_path || @user && path_link == "/en/users/#{@user.id}" || path_link == microposts_path %>
+                <%= f.search_field :content_cont %>
+              <% else %>
+                <%= f.search_field :name_cont %>
+              <% end %>
+              <%= f.submit :class => "btn btn-primary" %>
+            <% end %>
+          </li>
+        <% end %>
         <li><%= link_to t(".home"), root_path %></li>
         <li><%= link_to t(".help"), help_path %></li>
         <% if logged_in? %>
-          <li><%= link_to t(".users"), users_path %></li>
+          <% if current_user.admin? %>
+            <li><%= link_to t(".users"), users_path %></li>
+          <% end %>
+          <li><%= link_to t(".groups"), groups_path %></li>
           <li class="dropdown">
             <%= link_to "#", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
               <%= t ".account" %>
